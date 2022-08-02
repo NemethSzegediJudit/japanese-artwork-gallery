@@ -5,13 +5,13 @@ import "./Header.css";
 export default function Header() {
   return (
     <header>
-        <div>logo</div>
+        <h1>thumbRules</h1>
         <nav>
             <Link to="/">Home</Link>
-            <Link to="/login">Login</Link>
             <Link to="/favorites">Favorites</Link>
+            <Link to="/login">Login<i className="fa-solid fa-arrow-right-to-bracket"></i></Link>
+            
         </nav>
-        <h1>Az oldal címe</h1>
     </header>
   )
 }

@@ -1,20 +1,18 @@
-import React from 'react'
+import React from "react";
 import "./ArtCard.css";
+import { Link } from "react-router-dom";
 
 export default function ArtCard(props) {
-    
+  //----------PROPS----------
   const { artwork } = props;
-  /* 
-    image:
-    data.records[index].primaryimageurl
-
-    id:
-    data.records[index].id
-    */
 
   return (
-    <section className="artcard" key={artwork.id}>
+    <Link to={"/artwork/" + artwork.id}>
+      <section className="artcard" key={artwork.id}>
         <img src={artwork.primaryimageurl} alt="artwork" />
-    </section>
-  )
+        <h3 className="artcard-title">{artwork.title}</h3>
+        <h4 className="artcard-dated">{artwork.dated}</h4>
+      </section>
+    </Link>
+  );
 }

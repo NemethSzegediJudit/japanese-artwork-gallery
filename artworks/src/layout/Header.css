@@ -1,0 +1,26 @@
+header {
+  background-color:  #f8f8f8;
+  color: #15162a;
+  position: relative;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  padding-right: 100px;
+}
+
+h1 {
+  font-family: "GangsterGrotesk-bold";
+  font-weight: 900;
+  font-size: 40px;
+  padding-left: 50px;
+}
