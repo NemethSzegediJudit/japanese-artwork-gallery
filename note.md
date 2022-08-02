@@ -19,4 +19,20 @@ routingolt elemek a contenten belül:
 
 munkaszervezés:
     - alapstruktúra közösen
-    - komponensek -->
+    - komponensek 
+
+
+Színek:
+majdnem fekete kék: #15162a
+szürke: #e2e2e2
+majdnem fehér: #f8f8f8
+okker: #f1b62c
+narancs:#f86d32
+zöld:#159771
+kék:#084cad
+rózsaszín:#d297c5
+
+
+  
+-->
+
