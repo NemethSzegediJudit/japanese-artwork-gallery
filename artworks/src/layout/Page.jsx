@@ -7,8 +7,10 @@ export default function Page(props) {
   return (
     <>
       <Header />
-      <h2>Az oldal címe</h2>
-      <main>{children}</main>
+      <main className="container">
+        <h2 className="page-title">Az oldal címe</h2>
+        {children}
+      </main>
       <Footer />
     </>
   );

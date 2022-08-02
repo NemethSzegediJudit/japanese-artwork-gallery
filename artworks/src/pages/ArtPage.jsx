@@ -27,7 +27,11 @@ export default function ArtPage() {
 
   return (
     <Page>
-      <button><i className="fa-solid fa-arrow-left-long"></i></button>
+      <div>
+        <button>
+          <i className="fa-solid fa-arrow-left-long"></i>
+        </button>
+      </div>
       <img src={artwork.primaryimageurl} alt="artwork" />
       <h1>{artwork.title}</h1>
       <h2>{artwork.dated}</h2>

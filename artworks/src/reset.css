@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "GangsterGrotesk";
-  src: url(./fonts/GangsterGrotesk-Regular.otf);
-}
-
-@font-face {
-  font-family: "GangsterGrotesk-bold";
-  src: url(./fonts/GangsterGrotesk-Bold.otf);
-}
 
 * {
   margin: 0;
@@ -16,12 +7,6 @@
   box-sizing: border-box;
   background: transparent;
   font-family: inherit;
-  overflow-x: hidden;
-}
-
-body {
-  font-family: "GangsterGrotesk";
-  background-color: #f8f8f8;
 }
 
 a {
