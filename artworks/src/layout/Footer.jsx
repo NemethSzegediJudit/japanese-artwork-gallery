@@ -5,11 +5,13 @@ export default function Footer() {
   return (
     <footer>
       <div>
-        <li>Ghyczy András</li>
-        <li>Kovács Patrik</li>
-        <li>Németh-Szegedi Judit</li>
-        <li>Szilágyi András</li>
-        <li>Turzó Kriszti</li>
+        <ul>
+          <li>Ghyczy András</li>
+          <li>Kovács Patrik</li>
+          <li>Németh-Szegedi Judit</li>
+          <li>Szilágyi András</li>
+          <li>Turzó Kriszti</li>
+        </ul>
       </div>
       <div className="social-media">
         <i className="fa-brands fa-facebook"></i>
