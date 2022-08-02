@@ -11,6 +11,7 @@ export default function Header() {
             <Link to="/login">Login</Link>
             <Link to="/favorites">Favorites</Link>
         </nav>
+        <h1>Az oldal címe</h1>
     </header>
   )
 }

@@ -32,7 +32,8 @@ zöld:#159771
 kék:#084cad
 rózsaszín:#d297c5
 
-
+fetchelt Array:
+responseJson.records[index].primaryimageurl
   
 -->
 
