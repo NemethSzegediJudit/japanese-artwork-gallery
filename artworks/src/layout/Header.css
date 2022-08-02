@@ -1,26 +1,45 @@
 header {
-  background-color:  #f8f8f8;
-  color: #15162a;
-  position: relative;
+  background-color: #f8f8f8;
+  position: sticky;
   top: 0;
-  height: 10vh;
   width: 100%;
+
+  padding: 30px;
+
+  box-shadow: 0px -20px 50px -6px #333333;
+}
+
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 nav {
-  width: 500px;
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
-  padding-right: 100px;
+  font-size: 24px;
+  line-height: 40px;
+}
+
+nav a {
+  margin-left: 50px;
+}
+
+nav i {
+  margin-left: 10px;
 }
 
 h1 {
   font-family: "GangsterGrotesk-bold";
   font-weight: 900;
   font-size: 40px;
-  padding-left: 50px;
+}
+
+.page-title {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 50px;
+  font-family: "GangsterGrotesk-bold";
+  letter-spacing: 3px;
 }
