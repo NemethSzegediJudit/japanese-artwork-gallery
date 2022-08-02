@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "GangsterGrotesk";
+  src: url(./fonts/GangsterGrotesk-Regular.otf);
+}
+
+@font-face {
+  font-family: "GangsterGrotesk-bold";
+  src: url(./fonts/GangsterGrotesk-Bold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+    font-family: inherit;
+  }
+
+body {
+  font-family: "GangsterGrotesk";
+}
+
+  a{
+    text-decoration: none;
+  }
+  a img {
+    border: none;
+  }
+  
+  button,
+  a {
+    cursor: pointer;
+    color: inherit;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  button,
+  textarea,
+  select {
+    appearance: none !important;
+    border-radius: 0;
+  }
+

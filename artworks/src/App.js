@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import ArtPage from "./pages/ArtPage";
 import Favs from "./pages/Favs";
 import "./App.css";
+import "./reset.css"
 
 function App() {
   return (
