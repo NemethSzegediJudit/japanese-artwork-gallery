@@ -1,0 +1,21 @@
+.search-bar {
+  height: 50px;
+  width: 400px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 20px;
+  color: #333333;
+  background-color: #e2e2e2;
+  border-radius: 10px;
+
+  padding: 10px 20px;
+  margin: 50px auto;
+}
+
+input {
+  font-size: inherit;
+  color: inherit;
+}
