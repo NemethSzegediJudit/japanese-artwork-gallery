@@ -31,8 +31,8 @@ export default function ArtPage() {
         <Link to="/">
           <i className="fa-solid fa-arrow-left-long"></i>
         </Link>
-        <i class="fa-regular fa-heart"></i>
-        {/* <i class="fa-solid fa-heart"></i> */}
+        <i className="fa-regular fa-heart"></i>
+        {/* <i className={isFavorite ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i> */}
       </div>
       <div className="artwork-details container">
         <section className="left-section-img">
