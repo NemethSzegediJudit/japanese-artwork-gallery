@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="social-media-icons">
             <i className="fa-brands fa-facebook"></i>
             <i className="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-youtube"></i>
+            <i className="fa-brands fa-youtube"></i>
             <i className="fa-brands fa-twitter"></i>
           </div>
         </div>

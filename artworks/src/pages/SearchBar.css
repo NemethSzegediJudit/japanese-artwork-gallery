@@ -15,7 +15,8 @@
   margin: 50px auto;
 }
 
-input {
+input[type="text"] {
+  padding-left: 5px;
   font-size: inherit;
   color: inherit;
 }
