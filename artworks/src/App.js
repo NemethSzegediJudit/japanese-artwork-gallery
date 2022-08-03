@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
-import SearchResults from "./pages/SearchResults";
 import Login from "./pages/Login";
 import ArtPage from "./pages/ArtPage";
 import Favs from "./pages/Favs";
@@ -11,12 +10,6 @@ import "./reset.css";
 function App() {
   //----------useState for fetch----------
   const [artworks, setArtworks] = useState([]);
-
-  //----------useState for search----------
-  const [searchField, setSearchField] = useState("");
-
-  //----------useState for input value----------
-  const [value, setValue] = useState("");
 
   //----------useState for favorite function----------
   /* const [isFavorite, setIsFavorite] = useState(false); */
@@ -55,22 +48,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Landing artworks={artworks} value={value} setValue={setValue} />
-          }
-        />
+        <Route path="/" element={<Landing artworks={artworks} />} />
         <Route
           path="/search/:value"
-          element={
-            <SearchResults
-              artworks={artworks}
-              setValue={setValue}
-              searchField={searchField}
-              setSearchField={setSearchField}
-            />
-          }
+          element={<Landing artworks={artworks} />}
         />
         <Route
           path="/artwork/:id"

@@ -9,12 +9,12 @@ export default function Login() {
       <div className="login-wrapper">
         <form>
           <label>
-            <p>Username</p>
-            <input type="text" />
+            <p>Email</p>
+            <input type="email" size="30" multiple required />
           </label>
           <label>
             <p>Password</p>
-            <input type="password" />
+            <input type="password" size="10" required />
           </label>
           <div>
             <button type="submit" className="login">

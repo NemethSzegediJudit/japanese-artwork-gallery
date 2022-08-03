@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./SearchBar.css";
 
 export default function SearchBar(props) {
-  //----------PROPS----------
   const { value, setValue } = props;
 
   return (
@@ -14,9 +12,7 @@ export default function SearchBar(props) {
         value={value}
         onChange={(e) => setValue(e.currentTarget.value)}
       />
-      <Link to={"/search/" + value}>
-        <i className="fa-solid fa-magnifying-glass"></i>
-      </Link>
+      <i className="fa-solid fa-magnifying-glass"></i>
     </div>
   );
 }
