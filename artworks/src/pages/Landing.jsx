@@ -14,15 +14,18 @@ export default function Landing() {
     const apikey = "e10c94fc-881a-4828-8c61-0139c224a2f5";
 
     //fetch URL
-    const url = `https://api.harvardartmuseums.org/object?apikey=${apikey}&person=29481&size=100`;
+    const url = `https://api.harvardartmuseums.org/object?apikey=${apikey}&culture=Japanese&classification=Prints&q=peoplecount:1&hasimage=1&size=100`;
+
+    /* 'https://api.harvardartmuseums.org/object?apikey=${apikey}&classification=Prints&culture=Japanese&size=100' */
+    /* `https://api.harvardartmuseums.org/object?apikey=${apikey}&person=29481&size=100` */
 
     const response = await fetch(url);
 
     const responseJson = await response.json();
 
-    setArtworks(responseJson.records);
-
-    console.log(responseJson.records);
+    setArtworks(
+      responseJson.records.filter((artwork) => artwork.primaryimageurl !== null)
+    );
   }
 
   //----------useEffect for fetch----------
@@ -34,9 +37,11 @@ export default function Landing() {
     <Page>
       <SearchBar />
       <section className="artwork-container">
+        {/* a lenti mapelés csak akkor történjen meg, ha az inputunk state-je üres string */}
         {artworks.map((artwork) => (
           <ArtCard key={artwork.id} artwork={artwork} />
         ))}
+        {/* itt is lesz egy mapelés, a kondíció: ha az inputunk state-je nem üres string */}
       </section>
     </Page>
   );

@@ -8,7 +8,7 @@ export default function Page(props) {
     <>
       <Header />
       <main className="container">
-        <h2 className="page-title">Az oldal címe</h2>
+        <h2 className="page-title">Japanese art</h2>
         {children}
       </main>
       <Footer />

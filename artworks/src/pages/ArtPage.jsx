@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Page from "../layout/Page";
 import "./ArtPage.css";
 
@@ -28,15 +28,21 @@ export default function ArtPage() {
   return (
     <Page>
       <div>
-        <button>
+        <Link to="/">
           <i className="fa-solid fa-arrow-left-long"></i>
-        </button>
+        </Link>
       </div>
-      <img src={artwork.primaryimageurl} alt="artwork" />
-      <h1>{artwork.title}</h1>
-      <h2>{artwork.dated}</h2>
-      <h2>{artwork.medium}</h2>
-      <h2>{artwork.dimensions}</h2>
+      <div className="artwork-details container">
+        <section className="left-section-img">
+          <img src={artwork.primaryimageurl} alt="artwork" />
+        </section>
+        <section className="right-section-details">
+          <h1>{artwork.title}</h1>
+          <h2>{artwork.dated}</h2>
+          <h2>{artwork.medium}</h2>
+          <h2>{artwork.dimensions}</h2>
+        </section>
+      </div>
     </Page>
   );
 }

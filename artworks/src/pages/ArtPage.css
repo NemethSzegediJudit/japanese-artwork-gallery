@@ -2,3 +2,17 @@
   font-size: 30px;
   margin-bottom: 20px;
 }
+
+.artwork-details {
+  display: flex;
+  height: 80vh;
+}
+
+.left-section-img {
+  width: 100%;
+  height: 100%;
+}
+
+.left-section-img img {
+  object-fit: contain;
+}
