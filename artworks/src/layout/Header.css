@@ -30,7 +30,7 @@ nav i {
   margin-left: 10px;
 }
 
-h1 {
+p {
   font-family: "GangsterGrotesk-bold";
   font-weight: 900;
   font-size: 40px;
@@ -39,7 +39,7 @@ h1 {
 .page-title {
   text-align: center;
   margin: 50px 0;
-  font-size: 50px;
+  font-size: 74px;
   font-family: "GangsterGrotesk-bold";
   letter-spacing: 3px;
 }

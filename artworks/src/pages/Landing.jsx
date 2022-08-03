@@ -8,6 +8,9 @@ export default function Landing() {
   //----------useState for fetch----------
   const [artworks, setArtworks] = useState([]);
 
+  //----------useState for search----------
+  const [searchField, setSearchField] = useState("");
+
   //----------fetch try01----------
   async function fetchArtWorks() {
     //Harvard Art Museums API key
@@ -16,13 +19,11 @@ export default function Landing() {
     //fetch URL
     const url = `https://api.harvardartmuseums.org/object?apikey=${apikey}&culture=Japanese&classification=Prints&q=peoplecount:1&hasimage=1&size=100`;
 
-    /* 'https://api.harvardartmuseums.org/object?apikey=${apikey}&classification=Prints&culture=Japanese&size=100' */
-    /* `https://api.harvardartmuseums.org/object?apikey=${apikey}&person=29481&size=100` */
-
     const response = await fetch(url);
 
     const responseJson = await response.json();
 
+    //show artworks with image
     setArtworks(
       responseJson.records.filter((artwork) => artwork.primaryimageurl !== null)
     );
@@ -33,12 +34,22 @@ export default function Landing() {
     fetchArtWorks();
   }, []);
 
+  //----------filter artworks----------
+  const filteredArtWorks = artworks.filter((artwork) => {
+    return (
+      artwork.people[0].displayname
+        /* .toLowerCase() */
+        .includes(searchField /* .toLowerCase() */)
+    );
+  });
+
   return (
     <Page>
-      <SearchBar />
+      <SearchBar setSearchField={setSearchField} />
       <section className="artwork-container">
         {/* a lenti mapelés csak akkor történjen meg, ha az inputunk state-je üres string */}
-        {artworks.map((artwork) => (
+        {/* itt lehet filterezni a mapelés előtt, ha nincs szűrés, akkor truet adjon vissza a filter, tehát a filteren belül kell egy if*/}
+        {filteredArtWorks.map((artwork) => (
           <ArtCard key={artwork.id} artwork={artwork} />
         ))}
         {/* itt is lesz egy mapelés, a kondíció: ha az inputunk state-je nem üres string */}

@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header>
       <div className="container">
-        <h1>thumbRules</h1>
+        <p>thumbRules</p>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/favorites">Favorites</Link>

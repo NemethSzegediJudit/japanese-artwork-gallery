@@ -8,7 +8,7 @@ export default function Page(props) {
     <>
       <Header />
       <main className="container">
-        <h2 className="page-title">Japanese art</h2>
+        <h1 className="page-title">The Art of Japanese Prints</h1>
         {children}
       </main>
       <Footer />

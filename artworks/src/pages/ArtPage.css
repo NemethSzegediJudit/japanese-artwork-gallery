@@ -3,16 +3,10 @@
   margin-bottom: 20px;
 }
 
-.artwork-details {
-  display: flex;
-  height: 80vh;
-}
-
-.left-section-img {
+.left-section-img img {
   width: 100%;
   height: 100%;
-}
+  max-height: 80vh;
 
-.left-section-img img {
   object-fit: contain;
 }
