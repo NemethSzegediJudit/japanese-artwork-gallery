@@ -13,13 +13,13 @@ footer .container {
   justify-content: space-between;
 }
 
-footer p{
+footer p {
   font-size: 25px;
   font-family: "GangsterGrotesk-bold";
   padding-bottom: 15px;
 }
 
-.created-by li{
+.created-by li {
   list-style-type: none;
   font-size: 15px;
   margin-bottom: 5px;

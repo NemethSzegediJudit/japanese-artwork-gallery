@@ -25,5 +25,6 @@ input[type="text"] {
 }
 
 .fa-magnifying-glass {
+  cursor: pointer;
   color: #15162a;
 }

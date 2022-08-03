@@ -36,23 +36,18 @@ export default function Landing() {
 
   //----------filter artworks----------
   const filteredArtWorks = artworks.filter((artwork) => {
-    return (
-      artwork.people[0].displayname
-        /* .toLowerCase() */
-        .includes(searchField /* .toLowerCase() */)
-    );
+    return artwork.people[0].displayname
+      .toLowerCase()
+      .includes(searchField.toLowerCase());
   });
 
   return (
     <Page>
       <SearchBar setSearchField={setSearchField} />
       <section className="artwork-container">
-        {/* a lenti mapelés csak akkor történjen meg, ha az inputunk state-je üres string */}
-        {/* itt lehet filterezni a mapelés előtt, ha nincs szűrés, akkor truet adjon vissza a filter, tehát a filteren belül kell egy if*/}
         {filteredArtWorks.map((artwork) => (
           <ArtCard key={artwork.id} artwork={artwork} />
         ))}
-        {/* itt is lesz egy mapelés, a kondíció: ha az inputunk state-je nem üres string */}
       </section>
     </Page>
   );
