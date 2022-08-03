@@ -1,5 +1,6 @@
 import React from "react";
 import Page from "../layout/Page";
+
 import "./Login.css";
 
 export default function Login() {
@@ -23,7 +24,6 @@ export default function Login() {
         </form>
         <button className="new-account">Create new account</button>
       </div>
-      
     </Page>
   );
 }

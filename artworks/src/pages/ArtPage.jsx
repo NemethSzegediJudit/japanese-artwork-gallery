@@ -3,9 +3,11 @@ import { useParams, Link } from "react-router-dom";
 import Page from "../layout/Page";
 import "./ArtPage.css";
 
-export default function ArtPage() {
+export default function ArtPage(/* props */) {
   const [artwork, setArtwork] = useState([]);
   const params = useParams();
+
+  /*   const {isFavorite} = props; */
 
   async function fetchArtWork() {
     //Harvard Art Museums API key

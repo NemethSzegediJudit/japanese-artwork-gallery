@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./SearchBar.css";
 
 export default function SearchBar(props) {
   //----------PROPS----------
-  const { setSearchField } = props;
-
-  //----------useState for input value----------
-  const [value, setValue] = useState("");
-
-  //----------click event handler----------
-  const searchClick = () => {
-    setSearchField(value);
-    setValue("");
-  };
+  const { value, setValue } = props;
 
   return (
     <div className="search-bar">
@@ -21,13 +13,10 @@ export default function SearchBar(props) {
         placeholder="Search"
         value={value}
         onChange={(e) => setValue(e.currentTarget.value)}
-        onKeyPress={(event) => {
-          if (event.key === "Enter") {
-            searchClick();
-          }
-        }}
       />
-      <i className="fa-solid fa-magnifying-glass" onClick={searchClick}></i>
+      <Link to={"/search/" + value}>
+        <i className="fa-solid fa-magnifying-glass"></i>
+      </Link>
     </div>
   );
 }
