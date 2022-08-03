@@ -1,30 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import Page from "../layout/Page";
 import "./ArtPage.css";
 
-export default function ArtPage(/* props */) {
-  const [artwork, setArtwork] = useState([]);
+export default function ArtPage(props) {
   const params = useParams();
 
-  /*   const {isFavorite} = props; */
+  const { artworks /* isFavorite */ } = props;
 
-  async function fetchArtWork() {
-    //Harvard Art Museums API key
-    const apikey = "e10c94fc-881a-4828-8c61-0139c224a2f5";
-
-    //fetch URL
-    const url = `https://api.harvardartmuseums.org/object/${params.id}?apikey=${apikey}`;
-
-    const response = await fetch(url);
-
-    const responseJson = await response.json();
-
-    setArtwork(responseJson);
-  }
-
-  useEffect(() => {
-    fetchArtWork();
+  //----------filter artworks----------
+  const filteredArtWork = artworks.filter((artwork) => {
+    return artwork.id.toString().includes(params.id.toString());
   });
 
   return (
@@ -38,13 +24,14 @@ export default function ArtPage(/* props */) {
       </div>
       <div className="artwork-details container">
         <section className="left-section-img">
-          <img src={artwork.primaryimageurl} alt="artwork" />
+          <img src={filteredArtWork[0].primaryimageurl} alt="artwork" />
         </section>
         <section className="right-section-details">
-          <h1>{artwork.title}</h1>
-          <h2>{artwork.dated}</h2>
-          <h2>{artwork.medium}</h2>
-          <h2>{artwork.dimensions}</h2>
+          <h2>{filteredArtWork[0].title}</h2>
+          {/* <h3>{filteredArtWork.people[0].displayname}</h3> */}
+          <h3>{filteredArtWork[0].period}</h3>
+          <h3>{filteredArtWork[0].medium}</h3>
+          <h3>{filteredArtWork[0].dimensions}</h3>
         </section>
       </div>
     </Page>

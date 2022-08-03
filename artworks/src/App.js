@@ -56,7 +56,10 @@ function App() {
         <Route
           path="/artwork/:id"
           element={
-            <ArtPage /* isFavorite={isFavorite} toggleFavorite={toggleFavorite}*/
+            <ArtPage
+              artworks={
+                artworks
+              } /* isFavorite={isFavorite} toggleFavorite={toggleFavorite}*/
             />
           }
         />
