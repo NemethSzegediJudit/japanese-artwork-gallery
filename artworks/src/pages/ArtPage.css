@@ -1,6 +1,18 @@
 .fa-arrow-left-long {
   font-size: 30px;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.fa-heart {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .left-section-img img {
