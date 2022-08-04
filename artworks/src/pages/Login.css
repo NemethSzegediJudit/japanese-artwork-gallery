@@ -48,7 +48,7 @@
 #signInDiv {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 671px;
+  top: 613px;
   left: 50%;
   opacity: 0;
 }
@@ -89,4 +89,8 @@
   background-color: #15162a;
   color: #f8f8f8;
   margin: 50px auto 0;
+}
+
+.form p {
+  font-size: 16px;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import ArtPage from "./pages/ArtPage";
@@ -16,24 +17,15 @@ function App() {
   //----------useState for signIn----------
   const [user, setUser] = useState({});
 
-  /*   const favoriteArtworks = favoriteArtworkIds.map((id) =>
+  /*
+  const favoriteArtworks = favoriteArtworkIds.map((id) =>
     artworks.find((artwork) => artwork.id === id)
-  ); */
+  );
+  */
 
   const favoriteArtworks = artworks.filter((artwork) =>
     favoriteArtworkIds.includes(artwork.id)
   );
-
-  //----------useState for favorite function----------
-  /* const [isFavorite, setIsFavorite] = useState(false); */
-
-  /*   function toggleFavorite() {
-    if (isFavorite === true) {
-      setIsFavorite(false);
-    } else {
-      setIsFavorite(true);
-    }
-  } */
 
   //----------fetch artworks----------
   async function fetchArtWorks() {
@@ -77,6 +69,22 @@ function App() {
     fetchFavorites();
   }, [fetchFavorites]);
 
+  const handleJwt = useCallback(
+    (jwt) => {
+      window.localStorage.setItem("artworkToken", jwt);
+      let userObject = jwt_decode(jwt);
+      setUser(userObject);
+    },
+    [setUser]
+  );
+
+  useEffect(() => {
+    const jwt = window.localStorage.getItem("artworkToken");
+    if (jwt) {
+      handleJwt(jwt);
+    }
+  }, [handleJwt]);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -89,19 +97,22 @@ function App() {
           path="/artwork/:id"
           element={
             <ArtPage
-              artworks={
-                artworks
-              } /* isFavorite={isFavorite} toggleFavorite={toggleFavorite}*/
+              userId={userId}
+              artworks={artworks}
+              updateFavorites={fetchFavorites}
+              favorites={favoriteArtworkIds}
             />
           }
         />
         <Route
           path="/login"
-          element={<Login user={user} setUser={setUser} />}
+          element={
+            <Login user={user} setUser={setUser} handleJwt={handleJwt} />
+          }
         />
         <Route
           path="/favorites"
-          element={<Favs favoriteArtworks={favoriteArtworks} />}
+          element={<Favs favoriteArtworks={favoriteArtworks} userId={userId} />}
         />
       </Routes>
     </BrowserRouter>

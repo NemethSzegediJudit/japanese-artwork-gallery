@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import jwt_decode from "jwt-decode";
+import React, { useEffect } from "react";
 import Page from "../layout/Page";
 
 import "./Login.css";
 import { useCallback } from "react";
 
 export default function Login(props) {
-  const { user, setUser } = props;
+  const { user, setUser, handleJwt } = props;
   //----------GOOGLE sign in----------
 
   let clientId =
@@ -15,17 +14,16 @@ export default function Login(props) {
   const handleCallbackResponse = useCallback(
     (response) => {
       console.log("Encoded JWT ID token: " + response.credential);
-      let userObject = jwt_decode(response.credential);
-      console.log(userObject);
-      setUser(userObject);
+      handleJwt(response.credential);
       document.getElementById("signInDiv").hidden = true;
     },
-    [setUser]
+    [handleJwt]
   );
 
   function handleSignOut() {
     setUser({});
     document.getElementById("signInDiv").hidden = false;
+    window.localStorage.removeItem("artworkToken");
   }
 
   useEffect(() => {
