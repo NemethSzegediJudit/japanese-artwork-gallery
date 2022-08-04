@@ -12,7 +12,7 @@ export default function ArtPage(props) {
   const isFavorite = favorites.includes(artworkId);
 
   //----------filter artworks----------
-  const artWork = artworks?.find((artwork) => {
+  const artwork = artworks?.find((artwork) => {
     return artwork.id === artworkId;
   });
 
@@ -71,17 +71,17 @@ export default function ArtPage(props) {
           ></i>
         )}
       </div>
-      {artWork ? (
+      {artwork ? (
         <div className="artwork-details container">
           <section className="img-section">
-            <img src={artWork.primaryimageurl} alt="artwork" />
+            <img src={artwork.primaryimageurl} alt="artwork" />
           </section>
           <section className="details-section">
-            <h2>{artWork.title}</h2>
-            <h3>{artWork.people[0].displayname}</h3>
-            <h3>{artWork.period}</h3>
-            <h3>{artWork.medium}</h3>
-            <h3>{artWork.dimensions}</h3>
+            <h2>{artwork.title}</h2>
+            <h3>{artwork.people[0].displayname}</h3>
+            <h3>{artwork.period}</h3>
+            <h3>{artwork.medium}</h3>
+            <h3>{artwork.dimensions}</h3>
           </section>
         </div>
       ) : (
