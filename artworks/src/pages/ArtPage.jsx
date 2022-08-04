@@ -23,10 +23,10 @@ export default function ArtPage(props) {
         {/* <i className={isFavorite ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i> */}
       </div>
       <div className="artwork-details container">
-        <section className="left-section-img">
+        <section className="img-section">
           <img src={filteredArtWork[0].primaryimageurl} alt="artwork" />
         </section>
-        <section className="right-section-details">
+        <section className="details-section">
           <h2>{filteredArtWork[0].title}</h2>
           {/* <h3>{filteredArtWork.people[0].displayname}</h3> */}
           <h3>{filteredArtWork[0].period}</h3>

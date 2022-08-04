@@ -19,7 +19,7 @@ routingolt elemek a contenten belül:
 
 munkaszervezés:
     - alapstruktúra közösen
-    - komponensek 
+    - komponensek
 
 
 Színek:
@@ -34,6 +34,14 @@ rózsaszín:#d297c5
 
 fetchelt Array:
 responseJson.records[index].primaryimageurl
-  
--->
+-------------------------------------------------------------------------
+GOOGLE CLIENT:
 
+Client ID:
+356359668616-vg2osoq5qutab9mrr0jvggdpdhcntja8.apps.googleusercontent.com
+
+Client Secret:
+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
+-------------------------------------------------------------------------
+
+-->
