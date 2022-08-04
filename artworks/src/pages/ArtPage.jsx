@@ -20,7 +20,7 @@ export default function ArtPage(props) {
           <i className="fa-solid fa-arrow-left-long"></i>
         </Link>
         <i className="fa-regular fa-heart"></i>
-        {/* <i className={isFavorite ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i> */}
+        {/* <i className="fa-solid fa-heart"></i> */}
       </div>
       <div className="artwork-details container">
         <section className="img-section">

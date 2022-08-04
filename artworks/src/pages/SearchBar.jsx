@@ -12,7 +12,7 @@ export default function SearchBar(props) {
         value={value}
         onChange={(e) => setValue(e.currentTarget.value)}
       />
-      <i className="fa-solid fa-x"></i>
+      {value && <i className="fa-solid fa-x"></i>}
     </div>
   );
 }
