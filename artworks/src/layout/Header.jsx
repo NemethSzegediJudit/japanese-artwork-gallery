@@ -10,9 +10,7 @@ export default function Header() {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/favorites">Favorites</Link>
-          <Link to="/login">
-            Log in<i className="fa-solid fa-arrow-right-to-bracket"></i>
-          </Link>
+          <Link to="/login">Account</Link>
         </nav>
       </div>
     </header>
