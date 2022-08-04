@@ -18,6 +18,13 @@ export default function Favs(props) {
     navigate("/login");
   }
 
+  //----------filter favorite artworks----------
+  const filteredFavoriteArtWorks = favoriteArtworks.filter((artwork) => {
+    return artwork.people[0].displayname
+      .toLowerCase()
+      .includes(value.toLowerCase());
+  });
+
   return (
     <Page>
       <SearchBar value={value} setValue={setValue} />
@@ -25,7 +32,7 @@ export default function Favs(props) {
         <i className="fa-solid fa-arrow-left-long"></i>
       </Link>
       {userId ? (
-        <ArtCardList artworks={favoriteArtworks} />
+        <ArtCardList artworks={filteredFavoriteArtWorks} />
       ) : (
         <div className="loginWrapper">
           <button className="loginInFavs" onClick={handleClick}>
