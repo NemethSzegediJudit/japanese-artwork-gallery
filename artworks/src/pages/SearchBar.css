@@ -25,7 +25,8 @@ input[type="text"] {
   background-color: transparent;
 }
 
-.fa-magnifying-glass {
+.fa-x {
   cursor: pointer;
   color: #15162a;
+  margin-left: 20px;
 }
