@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Page from "../layout/Page";
-import ArtCard from "./ArtCard";
 import SearchBar from "./SearchBar";
+import ArtCardList from "./ArtCardList";
 import "./Landing.css";
 
 export default function Landing(props) {
@@ -37,11 +37,7 @@ export default function Landing(props) {
   return (
     <Page>
       <SearchBar value={value} setValue={setValue} />
-      <section className="artwork-container">
-        {filteredArtWorks.map((artwork) => (
-          <ArtCard key={artwork.id} artwork={artwork} />
-        ))}
-      </section>
+      <ArtCardList artworks={filteredArtWorks} />
     </Page>
   );
 }

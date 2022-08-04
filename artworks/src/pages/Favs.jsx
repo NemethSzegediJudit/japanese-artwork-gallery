@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Page from "../layout/Page";
 import SearchBar from "./SearchBar";
+import ArtCardList from "./ArtCardList";
 
 import "./Favs.css";
 
-export default function Favs() {
+export default function Favs(props) {
+  const { favoriteArtworks } = props;
+
   const navigate = useNavigate();
 
   //----------useState for searchBar value----------
@@ -21,11 +24,12 @@ export default function Favs() {
       <Link to="/">
         <i className="fa-solid fa-arrow-left-long"></i>
       </Link>
-      <div className="loginWrapper">
+      <ArtCardList artworks={favoriteArtworks} />
+      {/*       <div className="loginWrapper">
         <button className="loginInFavs" onClick={handleClick}>
           Please log in
         </button>
-      </div>
+      </div> */}
     </Page>
   );
 }

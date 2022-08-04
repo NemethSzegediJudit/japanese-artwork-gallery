@@ -3,26 +3,27 @@ import jwt_decode from "jwt-decode";
 import Page from "../layout/Page";
 
 import "./Login.css";
+import { useCallback } from "react";
 
-export default function Login() {
+export default function Login(props) {
+  const { user, setUser } = props;
   //----------GOOGLE sign in----------
-
-  //----------useState for signIn----------
-  const [user, setUser] = useState({});
 
   let clientId =
     "356359668616-vg2osoq5qutab9mrr0jvggdpdhcntja8.apps.googleusercontent.com";
 
-  function handleCallbackResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-    let userObject = jwt_decode(response.credential);
-    console.log(userObject);
-    setUser(userObject);
-    document.getElementById("signInDiv").hidden = true;
-    //document.querySelector(".form").hidden = true;
-  }
+  const handleCallbackResponse = useCallback(
+    (response) => {
+      console.log("Encoded JWT ID token: " + response.credential);
+      let userObject = jwt_decode(response.credential);
+      console.log(userObject);
+      setUser(userObject);
+      document.getElementById("signInDiv").hidden = true;
+    },
+    [setUser]
+  );
 
-  function handleSignOut(e) {
+  function handleSignOut() {
     setUser({});
     document.getElementById("signInDiv").hidden = false;
   }
@@ -38,7 +39,7 @@ export default function Login() {
       theme: "outline",
       size: "large",
     });
-  }, [clientId]);
+  }, [clientId, handleCallbackResponse]);
 
   return (
     <Page>
@@ -50,7 +51,7 @@ export default function Login() {
               <div>Signed in as</div>
               <h3>{user.name}</h3>
             </div>
-            <button className="sign-out" onClick={(e) => handleSignOut(e)}>
+            <button className="sign-out" onClick={handleSignOut}>
               Sign out
             </button>
           </>
