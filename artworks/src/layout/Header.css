@@ -60,10 +60,18 @@ nav a {
   transition: 0.2s all ease-in-out;
 }
 
-nav a:hover {
-  transform: translateY(-2px);
+nav a::after {
+  width: 0%;
+  display: block;
+  content: '';
+  border-bottom: #15162a 2px solid;
+  transition: 0.3s all ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:active {
-  transform: translateY(0.5px);
+  transform: translateY(2px);
 }
