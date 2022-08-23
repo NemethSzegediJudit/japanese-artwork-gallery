@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import Page from '../layout/Page';
-
 import './Login.css';
 import { useCallback } from 'react';
 
 export default function Login(props) {
-  const { user, setUser, handleJwt } = props;
+  const { user, setUser, handleJwt, handleDemoUserLogin} = props;
   //----------GOOGLE sign in----------
 
   let clientId =
@@ -66,7 +65,7 @@ export default function Login(props) {
                 <input type="password" />
               </label>
               <div>
-                <button>Log in</button>
+                <button onClick={handleDemoUserLogin}>Log in</button>
               </div>
             </div>
             <button className="google-button">

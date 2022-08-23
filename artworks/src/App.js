@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import jwt_decode from "jwt-decode";
-import Landing from "./pages/Landing";
-import Login from "./pages/Login";
-import ArtPage from "./pages/ArtPage";
-import Favs from "./pages/Favs";
-import "./App.css";
-import "./reset.css";
+import React, { useState, useEffect, useCallback } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import ArtPage from './pages/ArtPage';
+import Favs from './pages/Favs';
+import './App.css';
+import './reset.css';
+import avatar from './avatar.png';
 
 function App() {
   //----------useState for fetch----------
@@ -30,7 +31,7 @@ function App() {
   //----------fetch artworks----------
   async function fetchArtWorks() {
     //Harvard Art Museums API key
-    const apikey = "e10c94fc-881a-4828-8c61-0139c224a2f5";
+    const apikey = 'e10c94fc-881a-4828-8c61-0139c224a2f5';
 
     //fetch URL
     const url = `https://api.harvardartmuseums.org/object?apikey=${apikey}&culture=Japanese&classification=Prints&q=peoplecount:1&hasimage=1&size=100`;
@@ -71,15 +72,19 @@ function App() {
 
   const handleJwt = useCallback(
     (jwt) => {
-      window.localStorage.setItem("artworkToken", jwt);
+      window.localStorage.setItem('artworkToken', jwt);
       let userObject = jwt_decode(jwt);
       setUser(userObject);
     },
     [setUser]
   );
 
+  const handleDemoUserLogin = useCallback(() => {
+    setUser({ sub: 'demo-user-id', name: "demo user", picture: avatar});
+  });
+
   useEffect(() => {
-    const jwt = window.localStorage.getItem("artworkToken");
+    const jwt = window.localStorage.getItem('artworkToken');
     if (jwt) {
       handleJwt(jwt);
     }
@@ -107,7 +112,12 @@ function App() {
         <Route
           path="/login"
           element={
-            <Login user={user} setUser={setUser} handleJwt={handleJwt} />
+            <Login
+              user={user}
+              setUser={setUser}
+              handleJwt={handleJwt}
+              handleDemoUserLogin={handleDemoUserLogin}
+            />
           }
         />
         <Route
