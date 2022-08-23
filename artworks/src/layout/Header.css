@@ -33,13 +33,13 @@ nav i {
 header p {
   display: flex;
   align-items: center;
-  font-family: "GangsterGrotesk-bold";
+  font-family: 'GangsterGrotesk-bold';
   font-weight: 900;
   font-size: 30px;
 }
 
 header p::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -52,6 +52,18 @@ header p::before {
   text-align: center;
   margin: 50px 0;
   font-size: 74px;
-  font-family: "GangsterGrotesk-bold";
+  font-family: 'GangsterGrotesk-bold';
   letter-spacing: 3px;
+}
+
+nav a {
+  transition: 0.2s all ease-in-out;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+nav a:active {
+  transform: translateY(0.5px);
 }

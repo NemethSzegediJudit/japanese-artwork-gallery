@@ -15,7 +15,7 @@ footer .container {
 
 footer p {
   font-size: 25px;
-  font-family: "GangsterGrotesk-bold";
+  font-family: 'GangsterGrotesk-bold';
   padding-bottom: 15px;
 }
 
@@ -43,4 +43,13 @@ footer p {
 
 .social-media-icons i {
   margin-left: 20px;
+}
+
+.fa-brands {
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+
+.fa-brands:hover {
+  transform: translateY(-2px);
 }
