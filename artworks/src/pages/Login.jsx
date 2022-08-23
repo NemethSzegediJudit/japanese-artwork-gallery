@@ -1,29 +1,29 @@
-import React, { useEffect } from "react";
-import Page from "../layout/Page";
+import React, { useEffect } from 'react';
+import Page from '../layout/Page';
 
-import "./Login.css";
-import { useCallback } from "react";
+import './Login.css';
+import { useCallback } from 'react';
 
 export default function Login(props) {
   const { user, setUser, handleJwt } = props;
   //----------GOOGLE sign in----------
 
   let clientId =
-    "356359668616-vg2osoq5qutab9mrr0jvggdpdhcntja8.apps.googleusercontent.com";
+    '356359668616-vg2osoq5qutab9mrr0jvggdpdhcntja8.apps.googleusercontent.com';
 
   const handleCallbackResponse = useCallback(
     (response) => {
-      console.log("Encoded JWT ID token: " + response.credential);
+      console.log('Encoded JWT ID token: ' + response.credential);
       handleJwt(response.credential);
-      document.getElementById("signInDiv").hidden = true;
+      document.getElementById('signInDiv').hidden = true;
     },
     [handleJwt]
   );
 
   function handleSignOut() {
     setUser({});
-    document.getElementById("signInDiv").hidden = false;
-    window.localStorage.removeItem("artworkToken");
+    document.getElementById('signInDiv').hidden = false;
+    window.localStorage.removeItem('artworkToken');
   }
 
   useEffect(() => {
@@ -33,9 +33,9 @@ export default function Login(props) {
       callback: handleCallbackResponse,
     });
 
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      theme: "outline",
-      size: "large",
+    google.accounts.id.renderButton(document.getElementById('signInDiv'), {
+      theme: 'outline',
+      size: 'large',
     });
   }, [clientId, handleCallbackResponse]);
 
@@ -71,7 +71,7 @@ export default function Login(props) {
             </div>
             <button className="new-account">Create new account</button>
             <button className="google-button">
-              <i className="fa-brands fa-google"></i>{" "}
+              <i className="fa-brands fa-google"></i>{' '}
               <span>Sign in with Google</span>
             </button>
           </>
