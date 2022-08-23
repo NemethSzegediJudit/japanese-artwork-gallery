@@ -69,14 +69,17 @@ export default function Login(props) {
                 <button>Log in</button>
               </div>
             </div>
-            <button className="new-account">Create new account</button>
             <button className="google-button">
               <i className="fa-brands fa-google"></i>{' '}
               <span>Sign in with Google</span>
+              <div id="signInDiv"></div>
+            </button>
+            <button className="new-account" disabled title="coming soon">
+              Create new account
             </button>
           </>
         )}
-        <div id="signInDiv"></div>
+        
       </div>
     </Page>
   );
