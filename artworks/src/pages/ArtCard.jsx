@@ -1,9 +1,7 @@
 import React from "react";
-import "./ArtCard.css";
 import { Link } from "react-router-dom";
 
 export default function ArtCard(props) {
-  //----------PROPS----------
   const { artwork } = props;
 
   return (

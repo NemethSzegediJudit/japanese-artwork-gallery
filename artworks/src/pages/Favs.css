@@ -7,10 +7,12 @@
 .loginInFavs {
   width: 30%;
   height: 40px;
-  border-radius: 10px;
+
   font-size: 16px;
   background-color: #15162a;
+  border-radius: 10px;
   color: #f8f8f8;
+  
   margin: auto;
 }
 

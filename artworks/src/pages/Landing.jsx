@@ -6,7 +6,6 @@ import ArtCardList from "./ArtCardList";
 import "./Landing.css";
 
 export default function Landing(props) {
-  //----------PROPS----------
   const { artworks } = props;
 
   //----------useParams for url from searchBar----------

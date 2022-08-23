@@ -17,12 +17,10 @@ export default function ArtPage(props) {
   });
 
   async function heartClick() {
-    // A: a kattintás működése
-
+    
     if (isFavorite) {
       const url = `http://localhost:5000/favorites`;
       const body = {
-        // A: ez azu objektum amit küldünk a backend-nek
         userId: userId,
         artworkId: artworkId,
       };
@@ -40,7 +38,6 @@ export default function ArtPage(props) {
     } else {
       const url = `http://localhost:5000/favorites`;
       const body = {
-        // A: ez azu objektum amit küldünk a backend-nek
         userId: userId,
         artworkId: artworkId,
       };

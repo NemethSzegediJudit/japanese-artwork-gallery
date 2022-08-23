@@ -18,12 +18,6 @@ function App() {
   //----------useState for signIn----------
   const [user, setUser] = useState({});
 
-  /*
-  const favoriteArtworks = favoriteArtworkIds.map((id) =>
-    artworks.find((artwork) => artwork.id === id)
-  );
-  */
-
   const favoriteArtworks = artworks.filter((artwork) =>
     favoriteArtworkIds.includes(artwork.id)
   );
