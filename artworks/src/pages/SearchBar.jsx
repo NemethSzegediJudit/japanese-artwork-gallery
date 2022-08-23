@@ -8,7 +8,7 @@ export default function SearchBar(props) {
     <div className="search-bar">
       <input
         type="text"
-        placeholder="Search"
+        placeholder="Search an artist"
         value={value}
         onChange={(e) => setValue(e.currentTarget.value)}
       />
