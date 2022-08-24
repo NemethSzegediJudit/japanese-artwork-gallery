@@ -46,7 +46,6 @@ function App() {
   }, []);
 
   //----------fetch favorites from backend----------
-  //userId
   const userId = user.sub;
 
   const fetchFavorites = useCallback(async () => {
