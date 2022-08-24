@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+.loginWrapper {
+  text-align: center;
+}
+
 .loginInFavs {
   width: 150px;
   height: 40px;
@@ -14,8 +18,4 @@
   color: #f8f8f8;
   
   margin: auto;
-}
-
-.loginWrapper {
-  text-align: center;
 }

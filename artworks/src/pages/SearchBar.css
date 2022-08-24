@@ -18,18 +18,19 @@
 input[type='text'] {
   width: 80%;
 
-  padding-left: 5px;
-
   font-size: inherit;
   color: inherit;
   background-color: transparent;
+
+  padding-left: 5px;
 }
 
 .fa-x {
   opacity: 1;
+  color: #15162a;
+
   margin-left: 20px;
   cursor: pointer;
-  color: #15162a;
   transition: 0.2s all ease-in-out;
 }
 
@@ -38,8 +39,8 @@ input[type='text'] {
 }
 
 .fa-x:active {
-  transform: scale(0.5);
   opacity: 0;
+  transform: scale(0.5);
 }
 
 @media screen and (max-width: 550px) {
