@@ -73,8 +73,8 @@ function App() {
   );
 
   const handleDemoUserLogin = useCallback(() => {
-    setUser({ sub: 'demo-user-id', name: "demo user", picture: avatar});
-  });
+    setUser({ sub: 'demo-user-id', name: 'demo user', picture: avatar });
+  }, []);
 
   useEffect(() => {
     const jwt = window.localStorage.getItem('artworkToken');
@@ -104,7 +104,7 @@ function App() {
         />
         <Route
           path="/login"
-          element={
+          element={       
             <Login
               user={user}
               setUser={setUser}
