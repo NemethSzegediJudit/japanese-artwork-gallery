@@ -18,3 +18,9 @@
 .artcard-title {
   margin: 20px 0 10px 0;
 }
+
+@media screen and (max-width: 720px) {
+  .artcard {
+    margin-bottom: 30px;
+  }
+}

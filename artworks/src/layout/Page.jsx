@@ -7,7 +7,7 @@ export default function Page(props) {
   return (
     <>
       <Header />
-      <main className="container">
+      <main className="main-container">
         <h1 className="page-title">The Art of Japanese Prints</h1>
         {children}
       </main>

@@ -41,3 +41,9 @@ input[type='text'] {
   transform: scale(0.5);
   opacity: 0;
 }
+
+@media screen and (max-width: 550px) {
+  .search-bar {
+    margin: 20px 0;
+  }
+}

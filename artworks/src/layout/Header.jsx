@@ -5,7 +5,7 @@ import "./Header.css";
 export default function Header() {
   return (
     <header>
-      <div className="container">
+      <div className="header-container">
         <p>thumbRules</p>
         <nav>
           <Link to="/">Home</Link>

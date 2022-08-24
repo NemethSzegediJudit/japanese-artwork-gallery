@@ -88,6 +88,7 @@
 
 .sign-in-as img {
   max-height: 100px;
+  object-fit: contain;
 
   border-radius: 10px;
 
